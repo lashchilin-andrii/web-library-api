@@ -18,4 +18,6 @@ def init(fastapi_app: FastAPI) -> None:
         storage_secret=AuthConfig().SECRET_KEY,
         dark=True,
         tailwind=True,
+        title="Books",
+        favicon = "frontend/files/icon-open-book.png",
     )

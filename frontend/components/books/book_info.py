@@ -113,6 +113,7 @@ class BookInfoComponent:
                             for author in self.authors:
                                 full_name = (
                                     f"{author.author_name}"
+                                    " "
                                     f"{author.author_surname}"
                                 )
                                 ui.link(
