@@ -15,11 +15,11 @@ A modern, responsive web application for reading and managing digital books. Bui
 ## 🌐 Demo
 
 
-<img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/1.gif?raw=true" />
-<img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/2.gif?raw=true" />
-<img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/3.gif?raw=true" />
-<img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/4.gif?raw=true" />
-<img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/5.gif?raw=true" />
+<img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/1.gif?raw=true" />
+<img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/2.gif?raw=true" />
+<img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/3.gif?raw=true" />
+<img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/4.gif?raw=true" />
+<img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/5.gif?raw=true" />
 
 ---
 
@@ -51,14 +51,14 @@ A modern, responsive web application for reading and managing digital books. Bui
 The app is fully responsive across devices and screen sizes:
 
 <div align="center">
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233539.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233633.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233701.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233744.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233822.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233906.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719233952.png?raw=true" width="300"   /><br><br><br><br>
-  <img src="https://github.com/common-47-git/fastapi-web-library/blob/gifs/Pasted%20image%2020250719234028.png?raw=true" width="300"   />
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233539.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233633.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233701.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233744.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233822.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233906.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719233952.png?raw=true" width="300"   /><br><br><br><br>
+  <img src="https://github.com/lashchilin-andrii/web-library-api/blob/gifs/Pasted%20image%2020250719234028.png?raw=true" width="300"   />
 </div>
 
 ---
