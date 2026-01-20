@@ -8,9 +8,26 @@ HEADER_CONTAINER = "transparent flex items-center justify-between text-white bor
 HEADER_ROW = "justify-between w-full"
 HEADER_SITE_TITLE = "flex max-sm:hidden text-2xl font-bold"
 
-FILTER_MENU_CONTAINER = "w-full justify-center gap-10 px-4"
-FILTER_MENU_GRID_CONTAINER = "items-center"
-FILTER_MENU_TAGS_CONTAINER = "gap-2 p-4 pb-5 border border-gray-600 rounded-lg"
+FILTER_MENU_CONTAINER = (
+    "w-full max-w-7xl mx-auto "
+    "flex flex-row gap-12 px-6 py-6"
+)
+
+FILTER_MENU_GRID_CONTAINER = (
+    "flex-1 "
+    "flex justify-center"
+)
+
+FILTER_MENU_TAGS_CONTAINER = (
+    "w-64 "
+    "flex flex-col gap-3 "
+    "p-5 "
+    "bg-gray-900/40 backdrop-blur "
+    "border border-gray-700 "
+    "rounded-xl "
+    "shadow-lg"
+)
+
 
 BOOKS_GRID_CONTAINER = (
     "grid grid-cols-1 md:grid-cols-3 gap-4 self-center"  # responsive grid

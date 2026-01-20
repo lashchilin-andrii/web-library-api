@@ -23,7 +23,7 @@ class BookPages(BasePages):
         async def books() -> None:
             self.Header(fixed=False).classes(classes.HEADER_CONTAINER)
             all_books = await get_all_books_with_full_info()
-            filter_menu.FilterMenuComponent(all_books).render()
+            await filter_menu.FilterMenuComponent(all_books).render()
 
         @ui.page("/books/{book_id}")
         async def books_id(book_id: uuid.UUID) -> None:

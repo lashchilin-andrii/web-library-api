@@ -86,7 +86,7 @@ class BookInfoComponent:
                 )
                 info_line.InfoLineComponent(
                     "🈳 Translation",
-                    book.book_translation_status.value,
+                    book.book_translation_status,
                 )
                 await BookInfoComponent.BookInfo.Authors(
                     book.book_authors,

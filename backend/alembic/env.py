@@ -4,7 +4,7 @@ import alembic_postgresql_enum  # noqa: F401
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from backend.env.config import DatabaseConfig
+from backend.src.config import DatabaseConfig
 from backend.src.database import BaseAlchemyModel
 
 config = context.config
@@ -93,4 +93,7 @@ if context.is_offline_mode():
 else:
     run_migrations_online()
 
-print("\n\n\n\n\nn\n\n\nALEMBIC DATABASE URL:", config.get_main_option("sqlalchemy.url"))
+print("\n\n",  # noqa: T201
+      "-> ALEMBIC DATABASE URL:",
+      config.get_main_option("sqlalchemy.url"),
+      "\n\n")

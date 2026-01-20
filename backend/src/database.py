@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import DeclarativeBase
 
-from backend.env.config import DatabaseConfig
+from backend.src.config import DatabaseConfig
 
 engine = create_async_engine(url=DatabaseConfig().pg_dsn, echo=False)
 

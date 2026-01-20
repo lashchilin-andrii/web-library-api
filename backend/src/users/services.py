@@ -7,7 +7,7 @@ from jose import ExpiredSignatureError, JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.exc import IntegrityError
 
-from backend.env.config import AuthConfig
+from backend.src.config import AuthConfig
 from backend.src import http_exceptions
 from backend.src.services import BaseServices
 from backend.src.users.models import UsersModel

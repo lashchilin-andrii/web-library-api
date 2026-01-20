@@ -11,8 +11,8 @@ class BookBase(BaseModel):
     book_name: str = Field(min_length=2, max_length=50)
     book_country: str | None = Field(default=None, min_length=2, max_length=50)
     book_release_date: date | None = None
-    book_translation_status: TranslationStatusEnum = (
-        TranslationStatusEnum.ABSENT
+    book_translation_status: str = (
+        TranslationStatusEnum.ABSENT.value
     )
     book_description: str | None = Field(
         default=None,

@@ -4,7 +4,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, status
 from fastapi.security import OAuth2PasswordRequestForm
 
-from backend.env.config import AuthConfig
+from backend.src.config import AuthConfig
 from backend.src import http_exceptions
 from backend.src.enums import ModulesEnum
 from backend.src.users.models import UsersModel

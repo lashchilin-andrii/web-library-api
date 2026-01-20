@@ -25,7 +25,7 @@ def test_book_in_db(faker):
         book_name=faker.user_name(),
         book_country=faker.country(),
         book_release_date=faker.date(),
-        book_translation_status=TranslationStatusEnum.ABSENT,
+        book_translation_status=TranslationStatusEnum.ABSENT.value,
         book_description=faker.text(),
     )
 

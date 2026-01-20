@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from nicegui import ui
 
-from backend.env.config import AuthConfig
+from backend.src.config import AuthConfig
 from frontend.pages.books import BookPages
 from frontend.pages.chapters import ChapterPages
 from frontend.pages.users import UserPages
