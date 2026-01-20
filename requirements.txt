@@ -236,6 +236,10 @@ pluggy==1.6.0
     #   pytest
 pre-commit==4.5.1
     # via fastapi-web-reader (pyproject.toml)
+prometheus-client==0.24.1
+    # via prometheus-fastapi-instrumentator
+prometheus-fastapi-instrumentator==7.1.0
+    # via fastapi-web-reader (pyproject.toml)
 propcache==0.3.2
     # via
     #   fastapi-web-reader (pyproject.toml)
@@ -380,6 +384,7 @@ starlette==0.46.2
     #   fastapi-web-reader (pyproject.toml)
     #   fastapi
     #   nicegui
+    #   prometheus-fastapi-instrumentator
     #   starlette-testclient
 starlette-testclient==0.4.1
     # via schemathesis

@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend import headers, main_router, methods, origins
 from frontend import main as frontend_main
 
+from prometheus_fastapi_instrumentator import Instrumentator
+
 app = FastAPI(title="Books site")
 
 
@@ -20,3 +22,5 @@ app.include_router(
 )
 
 frontend_main.init(app)
+
+Instrumentator().instrument(app).expose(app)
