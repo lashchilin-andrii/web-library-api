@@ -1,16 +1,10 @@
-FROM python:3.13
+FROM python:3.11-slim
 
+WORKDIR /app
 
-WORKDIR /code
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
+COPY . .
 
-COPY ./requirements.txt /code/requirements.txt
-
-
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-
-COPY . /code/
-
-
-CMD ["fastapi", "run", "backend/main.py", "--port", "80"]
+CMD ["fastapi", "dev", "backend/main.py", "--host", "0.0.0.0", "--port", "8000"]

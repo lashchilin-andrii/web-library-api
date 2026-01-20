@@ -92,3 +92,5 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
+
+print("\n\n\n\n\nn\n\n\nALEMBIC DATABASE URL:", config.get_main_option("sqlalchemy.url"))
