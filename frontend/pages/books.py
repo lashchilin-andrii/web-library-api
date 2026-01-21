@@ -18,7 +18,7 @@ from frontend.static import classes
 
 
 class BookPages(BasePages):
-    def __init__(self) -> None:
+    def __init__(self) -> None:    
         @ui.page("/books")
         async def books() -> None:
             self.Header(fixed=False).classes(classes.HEADER_CONTAINER)

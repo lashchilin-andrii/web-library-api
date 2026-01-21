@@ -1,8 +1,9 @@
 from nicegui import ui
 
+from backend.src import http_exceptions
+from backend.src.tags.endpoints import get_all_tags
 from frontend.components.books import books_grid
 from frontend.static import classes
-from backend.src.tags.endpoints import get_all_tags
 
 
 class FilterMenuComponent:
@@ -10,25 +11,28 @@ class FilterMenuComponent:
         self.all_books = all_books
         self.selected_tags = set()
         self.grid_container = None
-        self.menu_container = None
         self.all_tags = []
 
     async def render(self):
-        # Fetch tags asynchronously
-        self.all_tags = await get_all_tags()
+        try:
+            self.all_tags = await get_all_tags()
+        except http_exceptions.NotFound404:
+            self.all_tags = []
 
-        with ui.row().classes(classes.FILTER_MENU_CONTAINER):
-            # Left side: Grid container
+        with ui.row().classes(
+            f"{classes.FILTER_MENU_CONTAINER} justify-center"
+        ):
+            # Grid column (ALWAYS exists)
             with ui.column().classes(
-                classes.FILTER_MENU_GRID_CONTAINER,
+                classes.FILTER_MENU_GRID_CONTAINER + " mx-auto"
             ) as self.grid_container:
                 pass
 
-            # Right side: Tag menu
+            # Tags column (ONLY if tags exist)
             if self.all_tags:
                 with ui.column().classes(
                     classes.FILTER_MENU_TAGS_CONTAINER,
-                ) as self.menu_container:
+                ):
                     for tag in self.all_tags:
                         tag_name = tag.tag_name
 
