@@ -21,6 +21,7 @@ build-job:
 
 test-job:
   stage: test
+  image: python:3.11
   services:
     - name: postgres:16
       alias: db
@@ -28,8 +29,11 @@ test-job:
     POSTGRES_DB: test_db
     POSTGRES_USER: postgres
     POSTGRES_PASSWORD: root
+  before_script:
+    - pip install -r requirements.txt
   script:
-    - docker run --rm --network host -e DBNAME=$DBNAME api:latest pytest -s -v
+    - pytest -s -v
+
 
 deploy-job:
   stage: deploy
