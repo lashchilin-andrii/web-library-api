@@ -17,7 +17,7 @@ build-job:
   stage: build
   script:
     - docker info
-    - docker build -t api:latest .
+    - docker build --platform linux/amd64 -t api:latest .
 
 test-job:
   stage: test
