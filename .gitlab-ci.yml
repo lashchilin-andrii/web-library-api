@@ -4,17 +4,19 @@ stages:
   - deploy
 
 variables:
-    DOCKER_TLS_CERTDIR: "/certs"
-    DBNAME: "test_db"
+  DOCKER_TLS_CERTDIR: "/certs"
+  DBNAME: "test_db"
 
 default:
-  image: docker:24.0.5
+  image: docker:stable
   services:
-    - docker:dind
+    - name: docker:stable-dind
+      alias: docker
 
 build-job:
   stage: build
   script:
+    - docker info
     - docker build -t api:latest .
 
 test-job:
