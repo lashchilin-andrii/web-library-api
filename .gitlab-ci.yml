@@ -3,20 +3,34 @@ stages:
   - test
   - deploy
 
+default:
+  image: docker:20.10.16
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+    DBNAME: "test_db"
 
 build-job:
   stage: build
   script:
-    - docker build .
+    - docker build -t api:latest .
 
 test-job:
   stage: test
-  script:
-    - docker run --rm api db pytest -s -v
+  services:
+    - name: postgres:16
+      alias: db
   variables:
-    DBNAME: "test_db"
+    POSTGRES_DB: test_db
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: root
+  script:
+    - docker run --rm --network host -e DBNAME=$DBNAME api:latest pytest -s -v
 
 deploy-job:
   stage: deploy
   script:
-    - docker compose up -d
+    - apk add --no-cache py3-pip
+    - pip3 install docker-compose
+    - docker compose up -d --build
