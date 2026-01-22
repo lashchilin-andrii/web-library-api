@@ -8,7 +8,7 @@ variables:
     DBNAME: "test_db"
 
 default:
-  image: docker:20.10.16
+  image: docker:24.0.5
   services:
     - docker:dind
 
