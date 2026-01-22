@@ -1,0 +1,39 @@
+image: docker:25
+
+services:
+  - docker:25-dind
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+  COMPOSE_PROJECT_NAME: gitlab_ci
+
+stages:
+  - build
+  - test
+
+before_script:
+  - docker info
+  - docker compose version
+
+build:
+  stage: build
+  script:
+    - docker compose build
+  rules:
+    - if: $CI_COMMIT_BRANCH
+
+test:
+  stage: test
+  script:
+    - docker compose up -d
+    # wait a bit for db & api to be ready
+    - sleep 10
+    # example: check API health
+    - docker compose ps
+    # 👇 replace with real tests
+    - docker compose exec -T api pytest || true
+  after_script:
+    - docker compose down -v
+  rules:
+    - if: $CI_COMMIT_BRANCH

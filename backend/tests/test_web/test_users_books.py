@@ -37,7 +37,7 @@ async def test_post_users_books(
     user_id = user_response.json()["user_id"]
 
     # create relation
-    relation = UsersBooksRead(book_id=book_id, user_id=user_id)
+    relation = UsersBooksRead(book_id=book_id, user_id=user_id, book_name=test_book_in_db.book_name)
     relation_response = await async_client.post(
         "/users_books/add",
         json=jsonable_encoder(relation),
@@ -64,7 +64,7 @@ async def test_post_users_books_conflict(
     assert user_response.status_code == status.HTTP_201_CREATED
     user_id = user_response.json()["user_id"]
 
-    relation = UsersBooksRead(book_id=book_id, user_id=user_id)
+    relation = UsersBooksRead(book_id=book_id, user_id=user_id, book_name=test_book_in_db.book_name)
     await async_client.post(
         "/users_books/add",
         json=jsonable_encoder(relation),
@@ -96,7 +96,7 @@ async def test_delete_users_books(
     assert user_response.status_code == status.HTTP_201_CREATED
     user_id = user_response.json()["user_id"]
 
-    relation = UsersBooksRead(book_id=book_id, user_id=user_id)
+    relation = UsersBooksRead(book_id=book_id, user_id=user_id, book_name=test_book_in_db.book_name)
     await async_client.post(
         "/users_books/add",
         json=jsonable_encoder(relation),
