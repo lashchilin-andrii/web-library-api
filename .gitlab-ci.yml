@@ -26,11 +26,14 @@ test-job:
     - name: postgres:16
       alias: db
   variables:
-    POSTGRES_DB: test_db
-    POSTGRES_USER: postgres
-    POSTGRES_PASSWORD: root
+    LOGIN_USER: "postgres"
+    PASSWORD: "root"
+    SERVERNAME: "db"
+    DBNAME: "test_db"
+    DRIVER: "asyncpg"
   before_script:
     - pip install -r requirements.txt
+    - cd backend
   script:
     - pytest -s -v
 
