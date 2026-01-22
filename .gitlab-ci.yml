@@ -3,13 +3,14 @@ stages:
   - test
   - deploy
 
+variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+    DBNAME: "test_db"
+
 default:
   image: docker:20.10.16
   services:
     - docker:dind
-  variables:
-    DOCKER_TLS_CERTDIR: "/certs"
-    DBNAME: "test_db"
 
 build-job:
   stage: build
