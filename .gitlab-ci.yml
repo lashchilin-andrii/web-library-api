@@ -47,12 +47,31 @@ test-job:
 
 deploy-job:
   stage: deploy
-  image: docker:25-cli 
+  image: docker:25-cli
   services:
     - docker:25-dind
   variables:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: root
+    POSTGRES_DB: test_db
+    LOGIN_USER: "postgres"
+    PASSWORD: "root"
+    SERVERNAME: "db" 
+    DBNAME: "test_db"
+    DRIVER: "asyncpg"
+    SECRET_KEY: "f3b3cc4586e4d7a177623f5603ad6f54"
+    ALGORITHM: "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: "30"
   script:
-    - docker compose up -d --build
+    - echo "SECRET_KEY=$SECRET_KEY" >> .env
+    - echo "ALGORITHM=$ALGORITHM" >> .env
+    - echo "ACCESS_TOKEN_EXPIRE_MINUTES=$ACCESS_TOKEN_EXPIRE_MINUTES" >> .env
+    - echo "LOGIN_USER=$LOGIN_USER" >> .env
+    - echo "PASSWORD=$PASSWORD" >> .env
+    - echo "SERVERNAME=$SERVERNAME" >> .env
+    - echo "DBNAME=$DBNAME" >> .env
+    - echo "DRIVER=$DRIVER" >> .env
 
+    - docker compose up -d --build
