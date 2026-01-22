@@ -8,16 +8,16 @@ variables:
   DBNAME: "test_db"
 
 default:
-  image: docker:stable
+  image: docker:25-cli
   services:
-    - name: docker:stable-dind
+    - name: docker:25-dind
       alias: docker
 
 build-job:
   stage: build
   script:
     - docker info
-    - docker build --platform linux/amd64 -t api:latest .
+    - docker build -t api:latest .
 
 test-job:
   stage: test
