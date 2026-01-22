@@ -25,10 +25,15 @@ test-job:
   services:
     - name: postgres:16
       alias: db
+      command: ["postgres"]
+      variables:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: root
+        POSTGRES_DB: test_db
   variables:
     LOGIN_USER: "postgres"
     PASSWORD: "root"
-    SERVERNAME: "db"
+    SERVERNAME: "db"   # matches the service alias
     DBNAME: "test_db"
     DRIVER: "asyncpg"
     SECRET_KEY: "f3b3cc4586e4d7a177623f5603ad6f54"
@@ -39,7 +44,6 @@ test-job:
     - cd backend
   script:
     - pytest -s -v
-
 
 deploy-job:
   stage: deploy
